@@ -1,0 +1,65 @@
+inherit_from: .rubocop_todo.yml
+
+# Cargar extensiones de Rubocop
+plugins:
+  - rubocop-rails
+  - rubocop-rspec # Solo si usas RSpec
+
+# Configuración general
+AllCops:
+  TargetRubyVersion: 3.3.6
+  NewCops: enable # Habilita nuevos cops automáticamente
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'bin/*'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+    - 'spec/**/*' # Si usas RSpec
+    - 'test/**/*' # Si usas Minitest
+
+# Reglas de estilo
+Layout/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Max: 30
+
+Metrics/ClassLength:
+  Max: 200
+
+Metrics/BlockLength:
+  Max: 30
+  Exclude:
+    - 'spec/**/*'
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/HashSyntax:
+  EnforcedStyle: ruby19_no_mixed_keys
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/WordArray:
+  MinSize: 3
+
+# Reglas de Rails
+Rails:
+  Enabled: true
+
+Rails/FilePath:
+  EnforcedStyle: slashes
+
+Rails/OutputSafety:
+  Enabled: true
+
+Rails/TimeZone:
+  Enabled: true
+  
+Layout/SpaceInsidePercentLiteralDelimiters:
+  Enabled: false
