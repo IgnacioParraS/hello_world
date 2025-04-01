@@ -60,4 +60,4 @@ gem "rubocop", "~> 1.74", :group => :development
 
 gem "rubocop-rspec", "~> 3.5", :group => :development
 
-gem "rubocop-rails", "~> 2.30", :group => :development
+gem "rubocop-rails", "~> 2.31", :group => :development
